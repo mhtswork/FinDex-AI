@@ -1,6 +1,7 @@
 const demoForm = document.getElementById('demo-form');
 const formStatus = document.getElementById('form-status');
 const storageKey = 'findex-demo-requests';
+const tallyDemoUrl = 'https://tally.so/r/GxVr4O';
 
 if (demoForm && formStatus) {
   const endpoint = demoForm.dataset.endpoint || '';
@@ -11,8 +12,13 @@ if (demoForm && formStatus) {
     const formData = new FormData(demoForm);
     const payload = Object.fromEntries(formData.entries());
 
-    formStatus.textContent = 'Submitting your request...';
+    formStatus.textContent = 'Redirecting you to the demo request form...';
     formStatus.className = 'form-status is-loading';
+
+    if (tallyDemoUrl) {
+      window.location.href = tallyDemoUrl;
+      return;
+    }
 
     try {
       if (endpoint) {
