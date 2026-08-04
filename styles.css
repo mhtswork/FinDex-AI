@@ -431,11 +431,36 @@ a {
   font-size: 0.78rem;
 }
 
-.contact-wrap {
+.contact-hero {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
+  padding: 2rem;
+  border-radius: 32px;
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  box-shadow: var(--shadow);
+}
+
+.contact-copy h2 {
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+}
+
+.contact-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.contact-highlights span {
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: #dceeff;
+  font-size: 0.95rem;
 }
 
 .contact-form {
@@ -447,8 +472,8 @@ a {
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: var(--shadow);
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.16);
 }
 
 .form-panel iframe {
@@ -557,9 +582,13 @@ a {
   .pricing-grid,
   .testimonial-grid,
   .roadmap-list,
-  .contact-wrap,
+  .contact-hero,
   .form-row {
     grid-template-columns: 1fr;
+  }
+
+  .contact-hero {
+    padding: 1.25rem;
   }
 
   .footer-wrap {
